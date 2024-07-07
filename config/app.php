@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'default_max_string_length'   => env('DB_DEFAULT_MAX_STRING_LENGTH', 191),
 
     /*
     |--------------------------------------------------------------------------
