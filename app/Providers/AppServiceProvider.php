@@ -2,11 +2,16 @@
 
 namespace App\Providers;
 
+use App\Constants\FolderRepositoryInterface;
+use App\Repositories\FolderRepository;
 use Illuminate\Support\ServiceProvider;
 use Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
+    public array $singletons = [
+        FolderRepositoryInterface::class => FolderRepository::class,
+    ];
     /**
      * Register any application services.
      *
