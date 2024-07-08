@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Constants\FolderRepositoryInterface;
+use App\Contracts\FolderRepositoryInterface;
 use App\Models\Folder;
 
 class FolderRepository implements FolderRepositoryInterface

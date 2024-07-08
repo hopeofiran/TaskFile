@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Constants\FolderRepositoryInterface;
+use App\Contracts\FolderRepositoryInterface;
 use App\Repositories\FolderRepository;
 use Illuminate\Support\ServiceProvider;
 use Schema;
