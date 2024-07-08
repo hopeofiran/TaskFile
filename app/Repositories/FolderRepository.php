@@ -7,34 +7,31 @@ use App\Models\Folder;
 
 class FolderRepository implements FolderRepositoryInterface
 {
-    protected Folder $folder;
-    public function __construct(Folder $folder)
+    public function all()
     {
-        $this->folder = $folder;
+        return Folder::all();
     }
 
-    public function getAll()
+    public function create(array $data)
     {
-        $this->folder;
+        return Folder::create($data);
     }
 
-    public function getById($id)
+    public function update(array $data, $id)
     {
-        $this->folder->findById($id);
+        $user = Folder::findOrFail($id);
+        $user->update($data);
+        return $user;
     }
 
-    public function create($name, $parent_id)
+    public function delete($id)
     {
-        // TODO: Implement create() method.
+        $user = Folder::findOrFail($id);
+        $user->delete();
     }
 
-    public function update($name, $parent_id)
+    public function find($id)
     {
-        // TODO: Implement update() method.
-    }
-
-    public function destroy($id)
-    {
-        // TODO: Implement destroy() method.
+        return Folder::findOrFail($id);
     }
 }

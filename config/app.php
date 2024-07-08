@@ -168,6 +168,11 @@ return [
          */
 
         /*
+         * Application costume Service Providers...
+         */
+        App\Providers\ResponseMacroServiceProvider::class,
+
+        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,

@@ -4,14 +4,12 @@ namespace App\Providers;
 
 use App\Contracts\FolderRepositoryInterface;
 use App\Repositories\FolderRepository;
+use App\Services\FolderService;
 use Illuminate\Support\ServiceProvider;
 use Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public array $singletons = [
-        FolderRepositoryInterface::class => FolderRepository::class,
-    ];
     /**
      * Register any application services.
      *
@@ -19,7 +17,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(FolderRepositoryInterface::class, FolderRepository::class);
+        $this->app->bind(FolderService::class, function ($app) {
+            return new FolderService($app->make(FolderRepositoryInterface::class));
+        });
     }
 
     /**

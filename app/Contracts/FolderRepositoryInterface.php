@@ -4,13 +4,13 @@ namespace App\Contracts;
 
 interface FolderRepositoryInterface
 {
-    public function getAll();
+    public function all();
 
-    public function getById($id);
+    public function create(array $data);
 
-    public function create($name, $parent_id);
+    public function update(array $data, $id);
 
-    public function update($name, $parent_id);
+    public function delete($id);
 
-    public function destroy($id);
+    public function find($id);
 }
